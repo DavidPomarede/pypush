@@ -8,22 +8,19 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 ## ML
-from sklearn.model_selection import train_test_split,
-cross_val_score, GridSearchCV
+from sklearn.model_selection import train_test_split, cross_val_score, GridSearchCV
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
 from sklearn.impute import SimpleImputer
 from sklearn.pipeline import Pipeline
 from sklearn.feature_selection import SelectKBest
 from sklearn.compose import ColumnTransformer
-from sklearn.metrics import accuracy_score,
-classification_report, roc_auc_score, plot_roc_curve
+from sklearn.metrics import accuracy_score, classification_report, roc_auc_score, plot_roc_curve
 
 ## Algorithms
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.svm import SVC
 from sklearn.tree import DecisionTreeClassifier
-from sklearn.ensemble import RandomForestClassifier,
-AdaBoostClassifier, GradientBoostingClassifier
+from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier, GradientBoostingClassifier
 
 data_raw = pd.read_csv('https://raw.githubusercontent.com/lucamarcelo/Churn-Modeling/main/Customer%20Churn%20Data.csv', set_index='CustomerID')
 
@@ -51,7 +48,7 @@ def missing_values(data):
 1: 'Unique values',
 2: 'Nan %',
 3: 'zeros %',
-#4: 'empty'}).sort_values('Nan %', ascending=False)
+4: 'empty'}).sort_values('Nan %', ascending=False)
 
 missing_values(data_raw)
 
@@ -91,7 +88,7 @@ counts = (data_raw.groupby(['Churn'])['SeniorCitizen']
 plot = sns.barplot(x="SeniorCitizen", y="percentage", hue="Churn", data=counts).set_title('SeniorCitizen vs Churn')
 
 for col in data_raw.select_dtypes(exclude=np.number):
-sns.catplot(x=col, kind='count', hue='Churn',data=data_raw.select_dtypes(exclude=np.number))
+	sns.catplot(x=col, kind='count', hue='Churn',data=data_raw.select_dtypes(exclude=np.number))
 
 data_raw['Churn'] = data_raw['Churn'].map( {'No': 0, 'Yes': 1} ).astype(int)
 
