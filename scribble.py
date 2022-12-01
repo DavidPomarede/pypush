@@ -1,5 +1,10 @@
 # Program to print the fibonacci series upto n_terms
  
+ 
+n_terms = int(input("Enter Number to calculate Fibonacci:"))
+ 
+ 
+ 
 # Recursive function
 def recursive_fibonacci(n):
   if n <= 1:
@@ -7,7 +12,7 @@ def recursive_fibonacci(n):
   else:
       return(recursive_fibonacci(n-1) + recursive_fibonacci(n-2))
  
-n_terms = 10
+# n_terms = 35
  
 # check if the number of terms is valid
 if n_terms <= 0:
