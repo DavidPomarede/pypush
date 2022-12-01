@@ -45,10 +45,10 @@ def missing_values(data):
     #empty = round((data[data[col]] '').sum()/data.shape[0]*100,1)
     df = df.append(pd.DataFrame([col, len(unique_values), nans,  zeros]).T, ignore_index = True)
   return df.rename(columns = {0: 'variable',
-1: 'Unique values',
-2: 'Nan %',
-3: 'zeros %',
-4: 'empty'}).sort_values('Nan %', ascending=False)
+				1: 'Unique values',
+				2: 'Nan %',
+				3: 'zeros %',
+				4: 'empty'}).sort_values('Nan %', ascending=False)
 
 missing_values(data_raw)
 
