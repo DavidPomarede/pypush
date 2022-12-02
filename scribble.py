@@ -3,7 +3,7 @@
  
 n_terms = int(input("Enter Number to calculate Fibonacci:"))
  
- 
+
  
 # Recursive function
 def recursive_fibonacci(n):
